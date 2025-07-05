@@ -1,0 +1,40 @@
+{
+  "fornecedores": [
+    {
+      "id": "001f",
+      "nome": "Empresa LTDA",
+      "email": "empresa@gmail.com",
+      "cnpj": "09491298000154",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58102149",
+        "logradouro": "Rua Mar Salgado",
+        "numero": "57",
+        "complemento": "apto 103",
+        "bairro": "Intermares",
+        "cidade": "Cabedelo",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "ba92",
+      "nome": "Gabriel",
+      "email": "gmamedem@gmail.com",
+      "cnpj": "09491298000158",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58102149",
+        "logradouro": "Rua Mar Salgado",
+        "numero": "57",
+        "complemento": "apto 103",
+        "bairro": "Intermares",
+        "cidade": "Cabedelo",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    }
+  ],
+  "produtos": [],
+  "clientes": []
+}
