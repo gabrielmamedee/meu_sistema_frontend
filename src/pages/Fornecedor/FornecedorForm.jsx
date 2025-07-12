@@ -1,11 +1,23 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Container, Form, OverlayTrigger, Tooltip, Row, Col, Button, Modal } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa'
 import axios from 'axios'
 
 const FornecedorForm = () => {
+
+    // Estou verificando se existe o id na url
+    const { id } = useParams()
+
+    // useEffect para carregar as informaçõess para editar
+    useEffect(() => {
+        if (id) {
+            axios.get(`${apiUrl}/fornecedores/${id}`)
+            .then(response => setFornecedor(response.data))
+            .catch(error => console.error("Hove um err ao carregar o fornecedor: ", error))
+        }
+    }, [id])
 
     const navigate = useNavigate()
 
@@ -66,19 +78,25 @@ const FornecedorForm = () => {
             cnpj: fornecedor.cnpj.replace(/[^\d]/g, '')
         }
 
-        axios.post(`${apiUrl}/fornecedores`, fornecedorData)
+        const request = id 
+        ? axios.put(`${apiUrl}/fornecedores/${id}`, fornecedorData) 
+        : axios.post(`${apiUrl}/fornecedores`, fornecedorData)
+
+        request.then(() => setModalAberto(true))
+        .catch(error => console.error(`Erro ao cadastrar/editar fornecedor`, error))
+
+        /*axios.post(`${apiUrl}/fornecedores`, fornecedorData)
         .then(response => {
             console.log("Fornecedor cadastrado com sucesso: ", response)
             setModalAberto(true)
         })
-        .catch(error => console.error('Error ao cadastar fornecedor: ', error))
+        .catch(error => console.error('Error ao cadastar fornecedor: ', error))*/
     }
 
   return (
     <Container className='mt-4'>
         <h2 className='mb-4 d-flex align-items-center'>
-            {/* por enquanto apenas o texto de Adicionar, depois colocamos o de Editar tb */}
-            Adicionar Fornecedor 
+            { id ? 'Editar Fornecedor' : 'Adicionar Fornecedor' } 
             <OverlayTrigger
                 placement='right'
                 overlay={<Tooltip>Preencha os dados do Fornecedor</Tooltip>}

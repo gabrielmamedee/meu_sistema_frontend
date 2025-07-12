@@ -70,5 +70,38 @@
     }
   ],
   "produtos": [],
-  "clientes": []
+  "clientes": [
+    {
+      "id": "5f9f",
+      "nome": "Gabriel Victor J. Mamede",
+      "email": "mamede.dev@gmail.com",
+      "telefone": "83986770727",
+      "endereco": {
+        "cep": "58102149",
+        "logradouro": "Rua Mar Salgado",
+        "numero": "57",
+        "complemento": "apto 103",
+        "bairro": "Intermares",
+        "cidade": "Cabedelo",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "0e42",
+      "nome": "Gabriel Victor J. Mamede",
+      "email": "gmamedem@gmail.com",
+      "telefone": "83986770727",
+      "endereco": {
+        "cep": "58102149",
+        "logradouro": "Rua Mar Salgado",
+        "numero": "57",
+        "complemento": "103",
+        "bairro": "Intermares",
+        "cidade": "Cabedelo",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    }
+  ]
 }
